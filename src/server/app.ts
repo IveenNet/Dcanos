@@ -19,12 +19,19 @@ app.use(morganMiddleware);
 app.use(cookieParser());
 
 // Configuración CORS
-const corsOptions = {
+/* const corsOptions = {
   origin: [process.env.CLIENT_URL || 'http://localhost:5173', 'http://127.0.0.1:5173'],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 };
+*/
+const corsOptions = {
+  origin: '*', // Permitir cualquier origen
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: false,
+};
 app.use(cors(corsOptions));
+
 
 // Configuraciones Express
 app.use(express.json({ limit: '10mb' }));
