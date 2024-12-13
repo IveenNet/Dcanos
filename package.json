@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node dist/index.js",
     "dev": "cross-env NODE_ENV=development ts-node-dev --respawn --transpile-only src/index.ts",
-    "build": "tsc",
+    "build": "npm install && tsc",
     "build:dev": "cross-env NODE_ENV=development tsc",
     "build:prod": "cross-env NODE_ENV=production tsc",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
@@ -60,6 +60,7 @@
     "typescript": "^5.6.3"
   },
   "dependencies": {
+    "@types/node": "^22.9.0",
     "bcrypt": "5.1.1",
     "compression": "1.7.5",
     "cookie-parser": "^1.4.7",
