@@ -1,0 +1,103 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Proyecto backend con Node.js, TypeScript, Express y MongoDB",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "cross-env NODE_ENV=development ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc",
+    "build:dev": "cross-env NODE_ENV=development tsc",
+    "build:prod": "cross-env NODE_ENV=production tsc",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "dev:debug": "cross-env NODE_ENV=development ts-node-dev --inspect --respawn --transpile-only src/index.ts",
+    "generate-secret": "ts-node src/utils/generateSecret.ts",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IveenNet/DcanosEstilistas.git"
+  },
+  "keywords": [
+    "nodejs",
+    "typescript",
+    "express",
+    "mongodb"
+  ],
+  "author": "Ivan David Medina Vallez",
+  "license": "Proprietary",
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/compression": "^1.7.5",
+    "@types/cookie-parser": "^1.4.7",
+    "@types/cors": "^2.8.17",
+    "@types/dotenv": "^8.2.3",
+    "@types/express": "^5.0.0",
+    "@types/helmet": "^4.0.0",
+    "@types/jest": "^29.5.14",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/mongoose": "^5.11.97",
+    "@types/morgan": "^1.9.9",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^22.9.0",
+    "@types/supertest": "^6.0.2",
+    "@types/winston": "^2.4.4",
+    "@typescript-eslint/eslint-plugin": "^8.14.0",
+    "@typescript-eslint/parser": "^8.14.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.57.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "bcrypt": "5.1.1",
+    "compression": "1.7.5",
+    "cookie-parser": "^1.4.7",
+    "cors": "2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "helmet": "8.0.0",
+    "jsonwebtoken": "9.0.2",
+    "mongoose": "^8.8.4",
+    "morgan": "1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "picocolors": "1.1.1",
+    "socket.io-client": "^4.8.1",
+    "winston": "3.17.0",
+    "zod": "3.23.8"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/**/*.test.ts"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json",
+      "node"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "tsconfig.json"
+      }
+    },
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ]
+  }
+}
